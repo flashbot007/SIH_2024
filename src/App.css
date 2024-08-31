@@ -1,0 +1,28 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#mainHeading::before{
+  content: "LET US SAVE LIVES";
+  width: 100%;
+  position: absolute;
+  color: rgb(9, 9, 8);
+  top: -5px;
+  left: -5px;
+  z-index: -1;
+  -webkit-text-stroke: 2px #90b147;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: black; /* Width of the scrollbar */
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #95c11e; /* Color of the scrollbar handle */
+  border-radius: 5px; /* Rounded corners for the scrollbar handle */
+}
+
