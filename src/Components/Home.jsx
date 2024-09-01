@@ -68,7 +68,7 @@ const Home = ({aboutRef}) => {
       
         const {clientX, clientY} = event;
 
-        cursor.current.style.transition = 'top 0.1s ease, left 0.1s ease'
+        cursor.current.style.transition = 'top 0.1s ease-in-out, left 0.1s ease-in-out'
         cursor.current.style.top = `${clientY - 15}px`
         cursor.current.style.left = `${clientX - 15}px`
         let playBtn = document.querySelector(".playBtn");
@@ -92,7 +92,7 @@ const Home = ({aboutRef}) => {
 
   return (
     <div id="main" className="relative flex flex-col  w-[100%]">
-    <div ref={cursor} id="moveWithCursor" className='transition-all duration-700 ease-in-out fixed cursor-default pointer-events-none h-[30px] w-[30px] bg-[#9BC91F] rounded-full z-20 top-0 left-0'></div>
+    <div ref={cursor} id="moveWithCursor" className='fixed cursor-default pointer-events-none h-[30px] w-[30px] bg-[#9BC91F] rounded-full z-20 top-0 left-0'></div>
      <div ref={bgImg} className="relative bg-[url('/disasterBg/disaster1.webp')] bg-cover flex  overflow-hidden h-[100vh] w-[100%]">
         <img
           ref={imgChange}
