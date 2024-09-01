@@ -1,7 +1,8 @@
 import React from 'react'
-import { useRef,forwardRef } from 'react'
+import { useRef,forwardRef,useState } from 'react'
 
 const About = forwardRef((props, ref)=> {
+ 
     
   return (
     <div ref={ref} className='h-[100vh] flex justify-center items-center  bg-[#201F1F] w-[100%]'>

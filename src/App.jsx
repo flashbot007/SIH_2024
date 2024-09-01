@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar'
 import Home from './Components/Home'
 
 function App() {
+  const [playState, setPlayState] = useState(false)
   const aboutRef = useRef()
 
   const scrollToAbout = ()=>{
@@ -19,6 +20,8 @@ function App() {
     <>
     <Navbar scrollToAbout={scrollToAbout}/>
     <Home aboutRef={aboutRef}/>
+    
+
     </>
   )
 }

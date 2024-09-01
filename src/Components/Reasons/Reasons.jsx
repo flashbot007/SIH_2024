@@ -1,14 +1,13 @@
 import React from "react";
-import './Reasons.css';
-import try_img from '../../assets/try-img.png'; 
-import play_icon from '../../assets/play-icon.png'; 
+import './Reasons.css'
+
 
 const Reasons = ({setPlayState}) => {
     return (
         <div className='try'>
             <div className="try-left">
-                <img src={try_img} alt="game" className='try-img' />
-                <img src={play_icon} alt="Play Icon" className='play-icon' onClick={()=>{setPlayState(true)}} />
+                <img src="/insertimg.png" alt="game" className='try-img' />
+                <img src="/insertimg.png" alt="Play Icon" className='play-icon' onClick={()=>{setPlayState(true)}} />
             </div>
             <div className="try-right">
                 <h3>ABOUT GAME</h3>
