@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Reasons from "./Reasons/Reasons";
 import VideoPlayer from "./VideoPlayer/VideoPlayer";
+import Try from "./Try";
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = ({aboutRef}) => {
@@ -17,6 +18,8 @@ const Home = ({aboutRef}) => {
     const cursor = useRef()
     const imgChange = useRef();
     const bgImg = useRef();
+    
+
   const [currentimage, setcurrentimage] = useState("/wildfire001.jpg");
   const [transition, settransition] = useState(false);
   const changeImage = (newImage) => {
@@ -60,14 +63,17 @@ const Home = ({aboutRef}) => {
 
     
     
-    
 
     const handleMouse = (event)=>{
+      
         const {clientX, clientY} = event;
 
         cursor.current.style.transition = 'top 0.1s ease, left 0.1s ease'
         cursor.current.style.top = `${clientY - 15}px`
         cursor.current.style.left = `${clientX - 15}px`
+        let playBtn = document.querySelector(".playBtn");
+       playBtn.style.top = `${clientY - 40}px`
+        playBtn.style.left = `${clientX - 40}px`
         
     }
     document.body.addEventListener("mousemove",handleMouse)
@@ -85,7 +91,7 @@ const Home = ({aboutRef}) => {
   
 
   return (
-    <div id="main" className="relative w-[100%]">
+    <div id="main" className="relative flex flex-col  w-[100%]">
     <div ref={cursor} id="moveWithCursor" className='transition-all duration-700 ease-in-out fixed cursor-default pointer-events-none h-[30px] w-[30px] bg-[#9BC91F] rounded-full z-20 top-0 left-0'></div>
      <div ref={bgImg} className="relative bg-[url('/disasterBg/disaster1.webp')] bg-cover flex  overflow-hidden h-[100vh] w-[100%]">
         <img
@@ -119,12 +125,10 @@ const Home = ({aboutRef}) => {
           ></div>
         </div>
       </div>
-      {/* <div className="container">
-      <Reasons setPlayState={setPlayState}/>
-      <div>
-        <VideoPlayer playState={playState} setPlayState={setPlayState} />
-      </div>
-      </div> */}
+    
+      <div className="breakline  h-[1px] w-[80%] "></div>
+      <Try/>
+      <div className="breakline h-[1px] w-[30rem]"></div>
       <About ref={aboutRef} first={first} />
     </div>
   );

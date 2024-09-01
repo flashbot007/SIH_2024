@@ -26,3 +26,17 @@
   border-radius: 5px; /* Rounded corners for the scrollbar handle */
 }
 
+.rotate  {
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    scale: 0.5;
+  }
+  to {
+    scale: 1;
+  }
+}
+
+
