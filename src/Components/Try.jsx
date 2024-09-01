@@ -11,15 +11,18 @@ const Try = () => {
   const cross = useRef();
   const play = useRef();
 
-  const handlePlayBtn = () => {
-    
+  const handlePlayEnter = () => {
+      document.querySelector("#moveWithCursor").style.opacity = "0"
       play.current.style.opacity = "1";
       console.log("entered");
     
-      play.current.style.opacity = "0";
-      console.log("left");
-    
   };
+
+  const handlePlayLeave = ()=>{
+    document.querySelector("#moveWithCursor").style.opacity = "1"
+    play.current.style.opacity = "0";
+    console.log("left");
+  }
 
   const handleCross = () => {
     gsap.fromTo(
@@ -57,7 +60,7 @@ const Try = () => {
   }, []);
 
   return (
-    <div className="w-[100%] bg-[#201F1F] z-29 text-white p-5 flex justify-center items-center h-[70vh]">
+    <div id="tryComponent" className="w-[100%] bg-[#201F1F] z-29 text-white p-5 flex justify-center items-center h-[70vh]">
       <div ref={video} className="relative  z-29 hidden h-[100%] w-[60%]  ">
         <video
           autoPlay
@@ -92,16 +95,16 @@ const Try = () => {
       </div>
       <div
         ref={hideContainer} 
-        className="flex transition-all duration-150 ease-in w-[100%] h-[100%]"
+        className="flex items-center transition-all duration-150 ease-in w-[100%] h-[100%]"
       >              
         <div 
-          onMouseEnter={handlePlayBtn}
-          onMouseLeave={handlePlayBtn}
-          className="relative border w-[40%] h-[100%] py-4 "
+          onMouseEnter={handlePlayEnter}
+          onMouseLeave={handlePlayLeave}
+          className="relative w-[40%] h-[90%]  "
         >
           <div
             ref={play}
-            className="fixed playBtn opacity-0 h-20 w-20 bg-black flex justify-center items-center font-bold rounded-full"
+            className="fixed transition-opacity duration-300 ease-in-out pointer-events-none playBtn opacity-0 h-20 w-20 bg-black flex justify-center items-center font-bold rounded-full"
           >
             PLAY
           </div>
@@ -125,8 +128,8 @@ const Try = () => {
           </p>
 
           <a href="https://hianime.to/" target="_blank">
-            <button className=" bg-black border-[3px] mt-5 border-[#95c11e] rounded-full text-center px-10 py-4 font-bold text-xl  animate-bounce">
-              <span className="tryNow animate-spin ">Try Now!</span>
+            <button className="tryNow bg-black border-[3px] mt-5 border-[#95c11e] rounded-full text-center px-10 py-4 font-bold text-xl  animate-bounce">
+              Try Now!
             </button>
           </a>
         </div>

@@ -5,7 +5,7 @@
 }
 
 #mainHeading::before{
-  content: "LET US SAVE LIVES";
+  content: var(--before-content, 'LET US SAVE LIVES');
   width: 100%;
   position: absolute;
   color: rgb(9, 9, 8);

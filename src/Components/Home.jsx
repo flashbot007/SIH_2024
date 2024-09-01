@@ -4,8 +4,6 @@ import {useEffect, useRef, useState } from "react";
 import About from "./About";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Reasons from "./Reasons/Reasons";
-import VideoPlayer from "./VideoPlayer/VideoPlayer";
 import Try from "./Try";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,8 +20,10 @@ const Home = ({aboutRef}) => {
 
   const [currentimage, setcurrentimage] = useState("/wildfire001.jpg");
   const [transition, settransition] = useState(false);
-  const changeImage = (newImage) => {
+  const changeImage = (newImage , val) => {
    
+    let homeHeading = document.querySelector("#mainHeading")
+
     
       setcount(prevCount => {
         let newCount = prevCount;
@@ -31,6 +31,28 @@ const Home = ({aboutRef}) => {
         // Update count based on boundary conditions
         if (newCount > 3) {
           newCount = 0;
+        }
+
+        //Update heading
+        if(val == 0){
+          homeHeading.innerHTML = "LET US SAVE LIVES"
+          homeHeading.style.setProperty('--before-content','"LET US SAVE LIVES"')
+
+        }
+        else if(val == 1){
+          homeHeading.innerHTML = "When waters rise, our mission is to lift lives to safety."
+          homeHeading.style.setProperty('--before-content','"When waters rise, our mission is to lift lives to safety."')
+        }
+        else if(val == 2){
+          homeHeading.innerHTML = "In the aftermath of the quake, we rebuild lives and restore hope."
+          homeHeading.style.setProperty('--before-content','"In the aftermath of the quake, we rebuild lives and restore hope."')
+
+        }
+        else{
+          homeHeading.innerHTML = "Together, we move mountains to restore what was lost."
+          homeHeading.style.setProperty('--before-content','"Together, we move mountains to restore what was lost."')
+
+
         }
     
         // Update background image
@@ -68,7 +90,7 @@ const Home = ({aboutRef}) => {
       
         const {clientX, clientY} = event;
 
-        cursor.current.style.transition = 'top 0.1s ease-in-out, left 0.1s ease-in-out'
+        // cursor.current.style.transition = 'top 0.1s ease-in-out, left 0.1s ease-in-out'
         cursor.current.style.top = `${clientY - 15}px`
         cursor.current.style.left = `${clientX - 15}px`
         let playBtn = document.querySelector(".playBtn");
@@ -108,27 +130,27 @@ const Home = ({aboutRef}) => {
 
         <div id="changeSlides" className="absolute  h-[100px] w-[200px] z-30 arrow left-9 bottom-10 flex justify-center items-center gap-3">
           <div
-            onClick={() => changeImage("/wildfire001.jpg")}
+            onClick={() => changeImage("/wildfire001.jpg",0)}
             className="z-25 hover:h-4 hover:w-4 hover:bg-sky-500 transition-all duration-100 ease-in-out circle h-5 w-5 rounded-full bg-white"
           ></div>
           <div
-            onClick={() => changeImage("/2.jpg")}
+            onClick={() => changeImage("/2.jpeg",1)}
            className="z-25 hover:h-4 hover:w-4 hover:bg-sky-500 transition-all duration-100 ease-in-out circle h-5 w-5 rounded-full bg-white"
           ></div>
           <div
-            onClick={() => changeImage("/3.jpg")}
+            onClick={() => changeImage("/3.jpg",2)}
             className="z-25 hover:h-4 hover:w-4 hover:bg-sky-500 transition-all duration-100 ease-in-out circle h-5 w-5 rounded-full bg-white"
           ></div>
           <div
-            onClick={() => changeImage("4.jpg")}
+            onClick={() => changeImage("4.webp",3)}
            className="z-25 hover:h-4 hover:w-4 hover:bg-sky-500 transition-all duration-100 ease-in-out circle h-5 w-5 rounded-full bg-white"
           ></div>
         </div>
       </div>
     
-      <div className="breakline  h-[1px] w-[80%] "></div>
+      <div className="breakline  bg-red-700  h-[2px] w-[100%] "></div>
       <Try/>
-      <div className="breakline h-[1px] w-[30rem]"></div>
+      <div className="breakline  bg-red-700 h-[2px] w-[100%]"></div>
       <About ref={aboutRef} first={first} />
     </div>
   );
