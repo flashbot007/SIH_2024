@@ -1,0 +1,36 @@
+
+
+.plan {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 2rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.plan:hover {
+  transform: scale(1.1);
+  background-color: rgb(255, 128, 44);
+  z-index: 2;
+}
+
+
+.load-more-button {
+  background-color: white;
+  color: orange;
+  font-weight: 700;
+  border: 2px solid orange;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: -8px;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+.load-more-button:hover {
+  background-color: black;
+  color: white;
+}
+

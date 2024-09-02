@@ -1,0 +1,66 @@
+.plans-container {
+    
+    transition: filter 0.3s ease;
+  }
+  
+  .plans-container.blurred {
+    filter: blur(5px);
+  }
+  
+  .plans {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+  
+  .plan {
+    display: flex;
+    flex-direction: column;
+    background-color: #3c3a3a;
+    color: white;
+    gap: 2rem;
+    padding: 1.5rem;
+    width: 15rem;
+    transition: all 0.3s ease;
+  }
+  
+  .plan:hover {
+    transform: scale(1.1);
+    background-color: rgb(255, 128, 44);
+    z-index: 2;
+  }
+  
+  .plan-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .btn {
+    background-color: white;
+    color: orange;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .quiz-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+  }

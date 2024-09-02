@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react' 
 import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import '.././i18n.js'
@@ -19,26 +19,51 @@ const Navbar = ({scrollToAbout}) => {
   const changeTheme = ()=>{
     let tryComp = document.querySelector("#tryComponent")
     let aboutComp = document.querySelector("#aboutComponent")
+    let plansComp = document.querySelector("#plansComponent")
     if(theme.current.innerHTML === "Light Mode"){
       theme.current.style.backgroundColor = "#201F1F"
+
+      //Plans Component
+      plansComp.style.backgroundColor = "white"
+      document.querySelectorAll(".plan").forEach(item=>{
+        item.style.backgroundColor = "#1F1F1F"
+      })
+      document.querySelector(".typesofD").style.backgroundColor = "rgb(239 68 68)"
+
+      //Try Component
       tryComp.style.backgroundColor = "white"
       tryComp.style.color = "black"
       document.querySelector(".playBtn").style.color = "white"
       document.querySelector(".tryNow").style.backgroundColor = "#1A1A1A"
       document.querySelector(".tryNow").style.color = "#black"
+
+      //About Component
       aboutComp.style.backgroundColor = "white"
       document.querySelector(".meet").style.backgroundColor = "#DC2626"
       document.querySelectorAll(".meetCards").forEach((item)=>{
         item.style.backgroundColor = "#1F1F1F"
       })
+      
       theme.current.innerHTML = "Dark Mode"
     }
     else if(theme.current.innerHTML === "Dark Mode"){
       theme.current.style.backgroundColor = "#2b2b2b"
+
+      //Plan Component
+      plansComp.style.backgroundColor = "#2b2b2b"
+      document.querySelectorAll(".plan").forEach(item=>{
+        item.style.backgroundColor = "#3c3a3a"
+      })
+      document.querySelector(".typesofD").style.backgroundColor = " rgb(185 28 28)"
+
+
+      //Try Component
       tryComp.style.backgroundColor = "#201F1F"
       tryComp.style.color = "white"
       document.querySelector(".tryNow").style.backgroundColor = "black"
       document.querySelector(".tryNow").style.color = "white"
+
+      //About Comonent
       aboutComp.style.backgroundColor = "#201F1F"
       document.querySelector(".meet").style.backgroundColor = "#EF4444"
       document.querySelectorAll(".meetCards").forEach((item)=>{
@@ -113,9 +138,7 @@ const Navbar = ({scrollToAbout}) => {
     <div onMouseEnter={()=>handleLogo('e')} onMouseLeave={()=>handleLogo('l')} className="siteNameLogo h-[20vh] ">
       <img className='w-full scale-[1.6] logoImg h-full object-contain'  src="/weblogo.png" alt="" />
     </div>
-    {/* <div className="relative site-name text-[rgb(254,218,218)] font-extrabold uppercase z-20 text-4xl w-fit">Crisis Friend</div> */}
-    {/* <div className="absolute site-name text-black z-10 font-extrabold left-[9px] top-[14px] uppercase text-4xl w-fit">Crisis <br/> Friend</div> */}
-    <ul className='flex justify-center items-center pr-10 gap-12  w-[100%]  text-white font-bold '>
+    <ul className='flex z-30 justify-center items-center pr-10 gap-12  w-[100%]  text-white font-bold '>
         <li className='hover:cursor-none hover:text-[#95c11e]'>Home</li>
         <li className='hover:cursor-none hover:text-[#95c11e]' onClick={scrollToAbout}>About Us</li>
         <li className='hover:cursor-none hover:text-[#95c11e]'>Contact</li>

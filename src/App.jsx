@@ -18,6 +18,7 @@ function App() {
 
   return (
     <>
+    
     <Navbar scrollToAbout={scrollToAbout}/>
     <Home aboutRef={aboutRef}/>
     

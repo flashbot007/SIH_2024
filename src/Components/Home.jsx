@@ -1,10 +1,12 @@
 import React from "react";
-import Navbar from "./Navbar";
+import "../App.css"
 import {useEffect, useRef, useState } from "react";
 import About from "./About";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Try from "./Try";
+import Plans from "./PlansData/Plans"
+import Quizzes from "./Plans/Plans"
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = ({aboutRef}) => {
@@ -13,10 +15,15 @@ const Home = ({aboutRef}) => {
   const [count, setcount] = useState(0)
   const [backgroundImg, setbackgroundImg] = useState(['/disasterBg/disaster1.webp' , '/disasterBg/disaster2.jpeg' , '/disasterBg/disaster3.avif' , '/disasterBg/disaster4.jpeg'])
   
-    const cursor = useRef()
+    const cursor = useRef(null)
     const imgChange = useRef();
     const bgImg = useRef();
     
+    const openChatbot = () => {
+      if (window.Kommunicate) {
+        window.Kommunicate.launchConversation();
+      }
+    };
 
   const [currentimage, setcurrentimage] = useState("/wildfire001.jpg");
   const [transition, settransition] = useState(false);
@@ -111,9 +118,12 @@ const Home = ({aboutRef}) => {
   }, [])
   
   
-
+ 
   return (
-    <div id="main" className="relative flex flex-col  w-[100%]">
+    <div id="main" className="relative overflow-hidden flex flex-col  w-[100%]">
+      {/* <div onClick={openChatbot} className=" z-[50]  chatbot  fixed  right-0 top-[80%] h-28 w-28 bg-transparent animate-bounce ">
+        <img src="/chatbot.png" alt="" />
+      </div> */}
     <div ref={cursor} id="moveWithCursor" className='fixed cursor-default pointer-events-none h-[30px] w-[30px] bg-[#9BC91F] rounded-full z-20 top-0 left-0'></div>
      <div ref={bgImg} className="relative bg-[url('/disasterBg/disaster1.webp')] bg-cover flex  overflow-hidden h-[100vh] w-[100%]">
         <img
@@ -125,10 +135,10 @@ const Home = ({aboutRef}) => {
           alt=""
         />
 
-        <h1 id="mainHeading" className="text-center opacity-1 translate-y-0  text-white w-[100%] absolute top-[30%] font-extrabold text-8xl z-10 heading">LET US SAVE LIVES</h1>
+        <h1 id="mainHeading" className="text-center  opacity-1 translate-y-0  text-white w-[100%] absolute top-[30%] font-extrabold text-8xl z-10 heading">LET US SAVE LIVES</h1>
        
 
-        <div id="changeSlides" className="absolute  h-[100px] w-[200px] z-30 arrow left-9 bottom-10 flex justify-center items-center gap-3">
+        <div id="changeSlides" className="absolute  h-[100px] w-[200px] z-1 arrow left-9 bottom-10 flex justify-center items-center gap-3">
           <div
             onClick={() => changeImage("/wildfire001.jpg",0)}
             className="z-25 hover:h-4 hover:w-4 hover:bg-sky-500 transition-all duration-100 ease-in-out circle h-5 w-5 rounded-full bg-white"
@@ -149,7 +159,11 @@ const Home = ({aboutRef}) => {
       </div>
     
       <div className="breakline  bg-red-700  h-[2px] w-[100%] "></div>
-      <Try/>
+      <Quizzes/>
+      <div className="breakline  bg-red-700  h-[2px] w-[100%] "></div>
+      <Plans/>
+      <div className="breakline  bg-red-700  h-[2px] w-[100%] "></div>
+      <Try />
       <div className="breakline  bg-red-700 h-[2px] w-[100%]"></div>
       <About ref={aboutRef} first={first} />
     </div>

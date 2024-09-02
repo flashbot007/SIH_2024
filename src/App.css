@@ -40,3 +40,22 @@
 }
 
 
+.dp-2{
+  object-position: 10% 30%;
+}
+
+*::selection{
+  background-color: white;
+  color: #95c11e;
+}
+
+/* Hide the Kommunicate default button */
+
+.launcher-svg-container{
+  opacity: 0;
+}
+
+#mck-sidebox-launcher{
+  display: none  !important;
+}
+

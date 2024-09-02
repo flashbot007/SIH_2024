@@ -12,17 +12,16 @@ const Try = () => {
   const play = useRef();
 
   const handlePlayEnter = () => {
-      document.querySelector("#moveWithCursor").style.opacity = "0"
-      play.current.style.opacity = "1";
-      console.log("entered");
-    
+    document.querySelector("#moveWithCursor").style.opacity = "0";
+    play.current.style.opacity = "1";
+    console.log("entered");
   };
 
-  const handlePlayLeave = ()=>{
-    document.querySelector("#moveWithCursor").style.opacity = "1"
+  const handlePlayLeave = () => {
+    document.querySelector("#moveWithCursor").style.opacity = "1";
     play.current.style.opacity = "0";
     console.log("left");
-  }
+  };
 
   const handleCross = () => {
     gsap.fromTo(
@@ -60,7 +59,10 @@ const Try = () => {
   }, []);
 
   return (
-    <div id="tryComponent" className="w-[100%] bg-[#201F1F] z-29 text-white p-5 flex justify-center items-center h-[70vh]">
+    <div
+      id="tryComponent"
+      className="w-[100%] bg-[#201F1F] z-29 text-white p-5 flex justify-center items-center "
+    >
       <div ref={video} className="relative  z-29 hidden h-[100%] w-[60%]  ">
         <video
           autoPlay
@@ -94,13 +96,13 @@ const Try = () => {
         </div>
       </div>
       <div
-        ref={hideContainer} 
+        ref={hideContainer}
         className="flex items-center transition-all duration-150 ease-in w-[100%] h-[100%]"
-      >              
-        <div 
+      >
+        <div
           onMouseEnter={handlePlayEnter}
           onMouseLeave={handlePlayLeave}
-          className="relative w-[40%] h-[90%]  "
+          className="relative w-[30%] h-[60vh]  "
         >
           <div
             ref={play}
@@ -115,16 +117,20 @@ const Try = () => {
             alt=""
           />
         </div>
-        <div className="h-[100%] w-[60%] flex pt-10 flex-col pb-2 gap-3 justify-center items-start px-10">
+        <div className="h-[100%] w-[70%] flex pt-10 flex-col pb-2 pr-20 gap-3 justify-center items-start px-10">
           <span className=" font-bold text-2xl">SOLUTION</span>
           <h1 className="font-extrabold  text-6xl mb-5">AR/VR GAME</h1>
           <p className="text-xl">
-            The AR/VR disaster prevention game offers an immersive experience
-            where users navigate realistic disaster scenarios like earthquakes,
-            floods, and fires. It provides interactive learning, guiding users
-            through essential safety measures. The game enhances engagement by
-            allowing practice in a safe, controlled environment, making disaster
-            preparedness both educational and enjoyable.
+            Welcome to Crisis Friend—where preparedness meets innovation. We’re
+            redefining disaster management training through cutting-edge Virtual
+            Reality. Our immersive platform empowers you to step into realistic
+            scenarios, making critical decisions in real time. Whether it's an
+            earthquake, fire, or flood, we equip you with the knowledge and
+            skills to stay safe when it matters most. At Crisis Friend, we
+            believe that being proactive is the key to survival. Our mission is
+            to ensure that everyone, from children to adults, is ready to face
+            any emergency with confidence. Join us in building a safer, more
+            resilient world—one drill at a time.
           </p>
 
           <a href="https://hianime.to/" target="_blank">

@@ -4,7 +4,31 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <title>Crisis Friend</title>
+    <script type="text/javascript">
+      (function(d, m){
+        var kommunicateSettings = 
+            {"appId":"249a3fb4e893b0673a3ace92cab3d0fcd", 
+             "popupWidget": false,  // Disable the automatic popup
+             "automaticChatOpenOnNavigation": false  // Prevent the chat from opening automatically
+            };
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
+      })(document, window.kommunicate || {});
+    </script>
+
+    <style>
+      #launcher-svg-container{
+        border: 2px solid purple;
+        display: none;
+        opacity: 0;
+      }
+    </style>
+    
+    
   </head>
   <body>
     <div id="root"></div>
