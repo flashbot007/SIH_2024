@@ -159,9 +159,9 @@ const Home = ({aboutRef}) => {
       </div>
     
       <div className="breakline  bg-red-700  h-[2px] w-[100%] "></div>
-      <Quizzes/>
-      <div className="breakline  bg-red-700  h-[2px] w-[100%] "></div>
       <Plans/>
+      <div className="breakline  bg-red-700  h-[2px] w-[100%] "></div>
+      <Quizzes/>
       <div className="breakline  bg-red-700  h-[2px] w-[100%] "></div>
       <Try />
       <div className="breakline  bg-red-700 h-[2px] w-[100%]"></div>

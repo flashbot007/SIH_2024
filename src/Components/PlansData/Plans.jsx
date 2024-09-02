@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRef } from 'react';
 import { plansData } from './plansData';
-import './Plans.css';
+// import './Plans.css';
 
 const Plans = ({cursor}) => {
 
@@ -21,13 +21,13 @@ const Plans = ({cursor}) => {
   }
 
   return ( 
-    <div id='plansComponent' className=" z-22 pb-10 relative flex items-center justify-center flex-col pt-8 bg-[#201F1F] gap-14 ">
+    <div id='plansComponent' className=" z-22 pb-10 relative flex items-center justify-center flex-col pt-8 w-[100%] bg-[#201F1F] gap-14 ">
       <div className="typesofD z-22 w-[100%] bg-red-700 py-4  flex justify-center items-center">
         <h1  className='text-6xl font-extrabold'>TYPES OF NATURAL DISASTERS</h1>
       </div>
-      <div className="plans grid px-4 grid-flow-col gap-6 z-22 py-4 grid-cols-4">
+      <div className="plans grid px-4 grid-flow-col w-[100%] gap-6 z-22 py-4 border grid-cols-4 items-center justify-center">
         {plansData.map((plan, index) => (
-          <div ref={plan} onMouseEnter={()=>handleDetails('e')} onMouseLeave={()=>handleDetails('l')} className="plan bg-[#3C3A3A]  scale-[0.9]" key={index}>
+          <div ref={plan} onMouseEnter={()=>handleDetails('e')} onMouseLeave={()=>handleDetails('l')} className="plan bg-[#3C3A3A] flex flex-col  scale-[0.9]" key={index}>
             <h3 className=" font-bold text-2xl">{plan.name}</h3>
             <p className="plan-description">{plan.description}</p>
           </div>
