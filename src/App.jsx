@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import './App.css'
 import Navbar from './Components/Navbar'
 import Home from './Components/Home'
+import Footer from './Components/Footer'
 
 function App() {
   const [playState, setPlayState] = useState(false)
@@ -21,6 +22,7 @@ function App() {
     
     <Navbar scrollToAbout={scrollToAbout}/>
     <Home aboutRef={aboutRef}/>
+    <Footer/>
     
 
     </>

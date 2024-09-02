@@ -69,7 +69,7 @@ const Try = () => {
           muted
           loop
           className="object-cover h-full w-full"
-          src="/video.mp4"
+          src="/game-video.mp4"
         ></video>
 
         <div

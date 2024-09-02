@@ -92,12 +92,12 @@ const Plans = () => {
         </h1>
       </div>
       {!isQuizActive ? (
-        <div className="plans w-[60%] gap-14 py-10">
+        <div className="plans w-[60%] gap-10 py-10">
           {plansData.map((plan, index) => (
-            <div key={index} className="plan">
+            <div key={index} className="plan  rounded-xl   hover:bg-[rgb(238,104,14)]   flex justify-center items-center">
               <h2 className="plan-heading">{plan.name}</h2>
               <button
-                className="btn"
+                className="btn w-[100%] rounded-xl"
                 onClick={() => handlePlanSelect(plan.name)}
               >
                 Quiz

@@ -134,11 +134,11 @@ const Navbar = ({scrollToAbout}) => {
   
   return ( 
    <>
-   <nav ref={changee} className='fixed navbar z-30 flex items-center h-[20vh]  w-[100%] p-4'>
+   <nav ref={changee} className='fixed navbar z-[30] flex items-center h-[20vh]  w-[100%] p-4'>
     <div onMouseEnter={()=>handleLogo('e')} onMouseLeave={()=>handleLogo('l')} className="siteNameLogo h-[20vh] ">
       <img className='w-full scale-[1.6] logoImg h-full object-contain'  src="/weblogo.png" alt="" />
     </div>
-    <ul className='flex z-30 justify-center items-center pr-10 gap-12  w-[100%]  text-white font-bold '>
+    <ul className='flex z-[30] justify-center items-center pr-10 gap-12  w-[100%]  text-white font-bold '>
         <li className='hover:cursor-none hover:text-[#95c11e]'>Home</li>
         <li className='hover:cursor-none hover:text-[#95c11e]' onClick={scrollToAbout}>About Us</li>
         <li className='hover:cursor-none hover:text-[#95c11e]'>Contact</li>

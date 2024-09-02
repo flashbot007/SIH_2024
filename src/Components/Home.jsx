@@ -144,7 +144,7 @@ const Home = ({aboutRef}) => {
             className="z-25 hover:h-4 hover:w-4 hover:bg-sky-500 transition-all duration-100 ease-in-out circle h-5 w-5 rounded-full bg-white"
           ></div>
           <div
-            onClick={() => changeImage("/2.jpeg",1)}
+            onClick={() => changeImage("/2.png",1)}
            className="z-25 hover:h-4 hover:w-4 hover:bg-sky-500 transition-all duration-100 ease-in-out circle h-5 w-5 rounded-full bg-white"
           ></div>
           <div
